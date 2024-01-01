@@ -1,32 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Scrollable Webpage</title>
+    <title>SonarOS</title>
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet'>
     <style>
+        body::after {
+            content: "";
+            background: url('https://i.pinimg.com/originals/0b/0c/4b/0b0c4ba5e3519c008df9a7f16ebfb238.gif') no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;   
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Comfortaa';
+            font-size: 2em; /* Increase the base font size */
+        }
+        .app {
+            width: 400px; /* Increase the size of the squares */
+            height: 400px;
+            margin: 20px;
+            border-radius: 60px;
+            display: inline-block;
+            transition: transform .2s;
+            background-image: url('https://cdn2.iconfinder.com/data/icons/ui-general-2/256/ui-17-512.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .app:hover {
+            transform: scale(1.1);
+        }
+        #welcome {
+            font-size: 1em; /* Adjust the welcome message size */
+        }
+        #date {
+            float: right;
+        }
+        #title {
+            font-size: 3em; /* Make the title larger */
+            text-align: center;
+        }
+        #version {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 100px; /* Lower the "My Apps" section */
         }
     </style>
-    <script>
-        function displayTime() {
-            var date = new Date();
-            var time = date.toLocaleTimeString();
-            document.getElementById('time').textContent = time;
-        }
-        setInterval(displayTime, 1000);
-    </script>
 </head>
-<body onload="displayTime()">
-    <h1>Welcome to the Test Scrollable Webpage!</h1>
-    <p id="time"></p>
-    <p>This is a test paragraph. Scroll down to see more.</p>
-    <!-- Add as many paragraphs as you like to make the page longer -->
-    <!-- ... -->
-    <p>Check out these links:</p>
-    <ul>
-        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
-        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
-        <li><a href="https://www.google.com" target="_blank">Google</a></li>
-    </ul>
+<body>
+    <div id="title">SonarOS</div>
+    <div id="welcome">Welcome Cameron</div>
+    <div id="date"></div>
+    <h2>My Apps</h2>
+    <div class="app"></div>
+    <div id="version">Version: 0.0.1</div>
+
+    <script>
+        var apps = document.getElementsByClassName('app');
+        for (var i = 0; i < apps.length; i++) {
+            apps[i].addEventListener('click', function() {
+                window.location.href = 'https://gomovies.sx/home'; // replace with actual app URLs
+            });
+        }
+        document.getElementById('date').innerText = new Date().toLocaleString();
+    </script>
 </body>
 </html>
