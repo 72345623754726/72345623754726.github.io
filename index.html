@@ -7,16 +7,26 @@
             font-family: Arial, sans-serif;
         }
     </style>
+    <script>
+        function displayTime() {
+            var date = new Date();
+            var time = date.toLocaleTimeString();
+            document.getElementById('time').textContent = time;
+        }
+        setInterval(displayTime, 1000);
+    </script>
 </head>
-<body>
+<body onload="displayTime()">
     <h1>Welcome to the Test Scrollable Webpage!</h1>
+    <p id="time"></p>
     <p>This is a test paragraph. Scroll down to see more.</p>
-    <p>This is another test paragraph. Keep scrolling!</p>
     <!-- Add as many paragraphs as you like to make the page longer -->
-    <p>Yet another test paragraph. There's more below!</p>
-    <p>And another one. Keep going!</p>
-    <p>You're doing great! Keep scrolling!</p>
-    <p>Almost there. Just a little more!</p>
-    <p>Last one! You've reached the end of the page!</p>
+    <!-- ... -->
+    <p>Check out these links:</p>
+    <ul>
+        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+        <li><a href="https://www.tiktok.com" target="_blank">TikTok</a></li>
+        <li><a href="https://www.google.com" target="_blank">Google</a></li>
+    </ul>
 </body>
 </html>
